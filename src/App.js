@@ -37,7 +37,14 @@ const tweetsArray = [
 function App() {
   return (
     <div className="App">
-      <Tweet />
+      {/* {console.log('tweetsArray[0] :', tweetsArray[0] )} */}
+      {tweetsArray.map(
+        (tweet,i)=>{
+          console.log(`index ${i}, tweet ${tweet}`)
+          {/* add key here to avoid warning message in the console. key should be unique */}
+          return <Tweet key={i} tweet={tweet}/>
+          }
+      )}
     </div>
   );
 }
